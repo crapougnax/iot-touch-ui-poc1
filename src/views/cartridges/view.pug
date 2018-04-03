@@ -1,0 +1,33 @@
+extend ../_layout
+
+block content
+  .jumbotron.jumbotron-fluid
+    .container
+      h2 Etat des cartouches
+
+  .row
+    .col-sm-6
+      .card
+        h5.card-header
+          span.badge.badge-secondary Cart. 1
+          span &nbsp;Citrate de Magnesium
+        .card-body
+            p.card-text
+              .progress
+                .progress-bar.w-75("arial-valuenow='75' arial-valuemax='100' arial-valuemin='0'") 75%
+            button.btn.btn-primary('#') Nettoyer
+            span &nbsp;
+            button.btn.btn-primary('#') Changer
+    .col-sm-6
+      .card
+        h5.card-header
+          span.badge.badge-secondary Cart. 2
+          span &nbsp; Gingko Biloba
+        .card-body
+            p.card-text
+              .progress
+                .progress-bar.w-25("arial-valuenow='25' arial-valuemax='100' arial-valuemin='0'") 25%
+            button.btn.btn-primary('#') Nettoyer
+            span &nbsp;
+            button.btn.btn-primary('#') Changer
+
