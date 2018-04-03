@@ -1,0 +1,32 @@
+mixin buttons(disable)
+  button.btn.btn-primary(href="#" disabled= disable)
+    span
+      i.fas.fa-tint
+      |  Nettoyer
+  p
+  button.btn.btn-primary(
+    href="#"
+    disabled= disable
+    )
+    span.fas.fa-eject
+    span &nbsp;Changer
+
+mixin progress(val)
+  .progress
+    .progress-bar.progress-bar-striped.progress-bar-animated(
+      arial-valuenow=val
+      arial-valuemax="100"
+      arial-valuemin="0"
+      style= `width:${val}%`
+      class= val > 50 ? "bg-success" : "bg-warning"
+      )= val > 0 ? val + '%' : null
+
+mixin card(pos, product, percent = 0)
+  .card.text-center.mx-2
+    h6.card-header= `Emplacement ${pos}`
+    .card-body
+        .card-title= product || 'VIDE'
+        p.card-text
+          +progress(percent)
+    .card-footer
+      +buttons(!product)
